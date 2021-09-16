@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      user-select: none;
+      font-family: American Typewriter, serif;
+    }
+
+    .wrapper {
+      height: auto;
+      width: 100%;
+      background: #ACD5D4;
+      display: grid;
+      grid-template-rows: auto;
+    }
+
+    /*Header*/
+    .header {
+      position: relative;
+      display: block;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      height: 70px;
+      padding: 5px;
+      background: #006770;
+      z-index: 10000;
+    }
+
+    .site-logo {
+      font-size: 30px;
+      font-family: cursive;
+      user-select: none;
+    }
+
+    .nav-bar {
+      position: relative;
+    }
+
+    ul li {
+      position: relative;
+      display: inline;
+
+    }
+
+    ul li a {
+      padding: 5px;
+      font-weight: bold;
+      background: #00E9C8;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    ul li a:hover {
+      padding: 5px;
+      font-weight: bold;
+      background: #0AD4B7;
+      position: relative;
+      text-decoration: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    /*Home*/
+    #home {
+      position: relative;
+      top: 65px;
+      width: 100%;
+      display: flex;
+      background-image: url("image/home.png");
+      background-size: cover;
+      height: 500px;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .btn {
+      display: flex;
+      height: 80px;
+      width: 70%;
+      justify-content: space-around;
+      align-items: center;
+      position: relative;
+      margin-left: 10px;
+    }
+
+    .btn>button {
+      display: block;
+      width: 120px;
+      height: 40px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 15px;
+      background: #DF005A;
+    }
+
+    .btn>button:hover {
+      display: block;
+      width: 120px;
+      height: 40px;
+      border-radius: 50px;
+      font-weight: bold;
+      font-size: 15px;
+      background: #B30048;
+      cursor: pointer;
+    }
+
+    button>a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .sec-btn {}
+
+    .intro {
+      position: relative;
+      margin-left: 10px;
+    }
+
+    .intro>h3 {
+      font-size: 30px;
+    }
+
+    .intro>p {
+      width: 95%;
+      text-align: justify;
+      color: white;
+    }
+
+    /*Main design*/
+    .main {
+      position: relative;
+      display: grid;
+      grid-template-rows: auto auto auto auto;
+      margin-top: 70px
+    }
+
+    /*Introduce*/
+    .introduce {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .introduce>div {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      background: none;
+      font-size: 25px;
+      font-family: cursive;
+      margin: 10px auto;
+    }
+
+    .introduce>p {
+      text-align: justify;
+      padding: 10px;
+    }
+
+
+    /*Service */
+    #service {
+      position: relative;
+      display: flex;
+      justify-content: space-around;
+      align-content: center;
+      flex-direction: column;
+    }
+
+    .ser-item {
+      display: flex;
+      flex-direction: column
+    }
+
+    .ser-item>div {
+      display: block;
+      margin: 30px auto;
+      width: 200px;
+      height: 200px;
+      background: white;
+      text-align: center;
+
+    }
+
+    .ser-item>div:hover {
+      display: block;
+      margin: 30px auto;
+      width: 205px;
+      height: 205px;
+      background: white;
+      box-shadow: 15px 15px 10px #5F5F5F;
+    }
+
+    #service .head-ser {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      background: none;
+      font-size: 25px;
+      font-family: cursive;
+    }
+
+    /*benefits*/
+    .back-ben {
+      padding: 10px;
+      background: #5CD4C3;
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    #benefit {
+      border-radius: 10px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      margin: 5px auto;
+      width: 95%;
+      background: #C9C989;
+    }
+
+    .ben-item {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px;
+    }
+
+    .ben-item:hover {
+      display: flex;
+      justify-content: space-around;
+      margin: 10px;
+    }
+
+    .ben-item>div {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background: #0085A4;
+      border-radius: 5px;
+    }
+
+    .ben-item>div:hover {
+      position: relative;
+      width: 100px;
+      height: 100px;
+      background: #0085A4;
+      box-shadow: 5px 5px 5px #1C1C1C;
+    }
+
+    #benefit .head-ben {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      background: none;
+      font-size: 25px;
+      font-family: cursive;
+      margin: 10px auto;
+    }
+
+    /*Contact*/
+    .back-con {
+      width: 100%;
+      height: auto;
+      background: #41988C;
+      padding-bottom: 30px;
+      padding-top: 30px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    #contact {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      margin: 5px auto;
+      width: 95%;
+      background: #00B99F;
+    }
+
+    #contact>div {
+      height: auto;
+      width: 100%;
+      text-align: center;
+      background: none;
+      font-size: 25px;
+      font-family: cursive;
+      margin: 10px auto;
+    }
+
+    form {
+      padding: 12px 20px;
+    }
+
+    label {}
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      color: #242424;
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 8px 0;
+      border-radius: 4px;
+      color: #008D79;
+    }
+
+    input[type=submit] {
+      background: #009B22;
+      color: #FFFFFF;
+    }
+
+    input[type=submit]:hover {
+      background: #00901C;
+      cursor: pointer;
+    }
+
+    /*footer*/
+    .footer {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: #87D3F0;
+    }
+
+    .copyright {
+      margin-top: 5px;
+      position: relative;
+    }
+
+    .footer .copyright>p {
+      padding: 5px;
+      text-align: center;
+      background: #525252;
+      border-top: 0.5px solid white;
+    }
+
+    /*Social Media*/
+    .social-media {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-media>div {
+      font-size: 25px;
+    }
+
+    .social-media .sm {
+      display: flex;
+    }
+
+    .social-media .sm img {
+      height: 50px;
+      width: 50px;
+      margin: 5px;
+    }
+
+    @media screen and (min-width:980px) {
+      .btn {
+        display: flex;
+        height: 80px;
+        width: 30%;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        margin-left: 10px;
+      }
+
+      .intro>p {
+        width: 50%;
+        text-align: justify;
+        color: white;
+      }
+
+      /*Service */
+      #service {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        align-content: center;
+        flex-direction: column;
+      }
+
+      .ser-item {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 10px;
+      }
+
+      .ser-item>div {
+        display: block;
+        margin: 10px auto;
+        width: 200px;
+        height: 200px;
+        background: white;
+        text-align: center;
+      }
+
+      .ser-item>div:hover {
+        display: block;
+        margin: 10px auto;
+        width: 205px;
+        height: 205px;
+        background: white;
+        box-shadow: 15px 15px 10px #5F5F5F;
+      }
+
+      #service .head-ser {
+        height: auto;
+        width: 100%;
+        text-align: center;
+        background: none;
+        font-size: 25px;
+        font-family: cursive;
+      }
+
+      /*Contact*/
+      .back-con {
+        width: 100%;
+        height: auto;
+        background: #41988C;
+        padding-bottom: 30px;
+        padding-top: 30px;
+        display: flex;
+        flex-direction: row;
+      }
+
+      .back-con .contact-logo {
+        background: url("image/contact.png");
+        background-size: cover;
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <nav>
+        <div class="site-logo">
+          DragX
+        </div>
+        <div class="nav-bar">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#service">Service</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div id="home">
+      <div class="intro">
+        <h3>Welcome to DragX</h3>
+        <p>DragX is the best time to buy a house in the morning and I can get you a lot of money on the photo and see If you're not interested in question then</p>
+      </div>
+      <div class="btn">
+        <button class="first-btn"><a href="#">Join us</a></button>
+        <button class="sec-btn"><a href="#">Sign up</a></button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="introduce">
+        <div>Let Know About Us</div>
+        <p>A job interview is an interview consisting of a conversation between a job applicant and a representative of an employer which is conducted to assess whether the applicant should be hired. Interviews are one of the most popularly used devices for employee selection.</p>
+      </div>
+      <div id="service">
+        <div class="head-ser">
+          Our all services
+        </div>
+        <div class="ser-item">
+          <div>
+            Course
+          </div>
+          <div>
+            Job
+          </div>
+          <div>
+            Freelance
+          </div>
+        </div>
+      </div>
+      <div class="back-ben">
+        <div id="benefit">
+          <div class="head-ben">
+            Our Benefits
+          </div>
+          <div class="ben-item">
+            <div>
+              Support
+            </div>
+            <div>
+              No fee
+            </div>
+            <div>Free Job </div>
+          </div>
+        </div>
+      </div>
+      <div class="back-con">
+        <div class="contact-logo">
+        </div>
+        <div id="contact">
+          <div>
+            Contact Us
+          </div>
+          <form action="#" method="POST">
+            <label for="user">Name :</label>
+            <input type="text" name="user" placeholder="Type your name" required>
+            <label for="email">Email :</label>
+            <input type="email" name="email" placeholder="Type your mail" required>
+            <label for="country">Country</label>
+            <select name="country">
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="India">India</option>
+              <option value="USA">USA</option>
+            </select>
+            </option>
+            <label for="msg">Description :</label>
+            <textarea name="msg" id="msg" rows="8" cols="40" placeholder="Your opinion" required></textarea>
+            <input type="submit" name="submit" id="" value="Send" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="social-media">
+        <div class="">
+          Connect with us
+        </div>
+        <div class="sm">
+          <a href="#"><img src="image/twitter.png" alt="" /></a>
+          <a href="#"><img src="image/telegram.png" alt="" /></a>
+          <a href="#"><img src="image/github.png" alt="" /></a>
+          <a href="#"><img src="image/LinkedIn.png" alt="" /></a>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy DragX 2021-2099</p>
+        <p>Created by Ashfiquzzaman Sajal</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
